@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public class BossStateMachine : StateMachine, IDamageable
 {
@@ -5,34 +6,45 @@ public class BossStateMachine : StateMachine, IDamageable
     [SerializeField] private GameManager manager;
 
     [Header("Attack Controls")]
-    [SerializeField] private  float targetDistance;
-    [SerializeField] private  float stunTime;
-    [SerializeField] private  float stunInterval;
-    [SerializeField] private  int damage;
+    [SerializeField] private float targetDistance;
+    [SerializeField] private float stunTime;
+    [SerializeField] private float stunInterval;
+    [SerializeField] private int damage;
     [SerializeField] private float damageCooldown;
 
     [Header("Grapple Settings")]
     [SerializeField] private float grappleTargetDistance;
     [SerializeField] private float grappleDuration;
     [SerializeField] private float grappleSpeed;
+
+    [Header("Charged Attack Dash Settings")]
+    [SerializeField] private float dashCD;
+    [SerializeField] private float dashRange;
     
     private bool isFlipped = false;
     private bool isStunned = false;
     private int grapplingFinished = 0;
     private int attackFinished = 0;
+    private bool windUpFinished = true;
     private int hurtFinished = 0;
     private int introFinished = 0;
     private int health;
+
+    private float lastDashTime = 0;
+
     
     public bool FightStarted {get {return manager.FightStarted;}}
     public bool IsStunned {get {return isStunned;} set {isStunned = value;}}
     public bool IsTransitioning {get {return manager.IsTransitioning;} set {manager.IsTransitioning = value;}}
     public int GrapplingFinished {get {return grapplingFinished;} set {grapplingFinished = value;}}
+    public bool WindUpFinished { get {return windUpFinished;} set { windUpFinished = value; } }
     public int AttackFinished {get {return attackFinished; } set {attackFinished = value;}}
+    public bool Flipped { get {return isFlipped;}}
     public int HurtFinished {get {return hurtFinished; } set {hurtFinished = value;}}
     public int IntroFinished {get {return introFinished; } set {introFinished = value;}}
     public int Health {get {return health;} set {health = value;}}
     public int Damage {get {return damage;} set {damage = value;}}
+    public float LastDashTime { get { return lastDashTime; } set { lastDashTime = value; } }
     public float Cooldown {get {return damageCooldown;} set {damageCooldown = value;}}
     public float StunTime {get {return stunTime;}}
     public float StunInterval {get {return stunInterval;}}
@@ -87,18 +99,18 @@ public class BossStateMachine : StateMachine, IDamageable
         }
     }
 
+    public void flashCharacter()
+    {
+        sprite.GetComponent<DamageFlash>().BeginFlash();
+    }
+
     public void ApplyDamage(int damage)
     {
         if (IntroFinished == 1 && manager.FightStarted)
         {
             Health -= damage;
             Debug.Log("Enemy Health: " + Health);
-            sprite.GetComponent<DamageFlash>().BeginFlash();
-            if (!player.gameObject.GetComponent<PlayerStateMachine>().IsDashing && player.gameObject.GetComponent<PlayerStateMachine>().DashUnlocked)
-            {
-                player.gameObject.GetComponent<PlayerStateMachine>().CurrentDashMeter += 1;
-                player.gameObject.GetComponent<PlayerStateMachine>().UpdateDashText();
-            }
+            flashCharacter();
             
         }
         if (Health % StunInterval == 0 && !isStunned)
@@ -111,7 +123,10 @@ public class BossStateMachine : StateMachine, IDamageable
         }
     }
 
-
+    public bool canDash()
+    {
+        return !InRange() && Vector3.Distance(transform.position, Player.transform.position) <= dashRange && (Time.time >= lastDashTime + dashCD);
+    }
 
     public bool InRange()
     {
@@ -121,6 +136,16 @@ public class BossStateMachine : StateMachine, IDamageable
     public bool GrappleInRange()
     {
         return Vector2.Distance(transform.position, Player.transform.position) > GrappleTargetDistance;
+    }
+
+    public void onWindupStart()
+    {
+        windUpFinished = false;
+    }
+
+    public void onWindupEnd()
+    {
+        windUpFinished = true;
     }
 
     public void OnAttackStart()

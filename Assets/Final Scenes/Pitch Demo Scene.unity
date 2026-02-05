@@ -969,6 +969,8 @@ PlayableDirector:
     value: {fileID: 2079079477}
   - key: {fileID: -8007250976870861921, guid: 8f9c250e5b732ce408afac231d661741, type: 2}
     value: {fileID: 1874512648}
+  - key: {fileID: -5749619822342328799, guid: 8f9c250e5b732ce408afac231d661741, type: 2}
+    value: {fileID: 1576479055}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &460105842
@@ -2092,7 +2094,7 @@ PlayableDirector:
   m_GameObject: {fileID: 890852996}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 8f9c250e5b732ce408afac231d661741, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: ab1b28d990bbb12429e2297ba2b91704, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -2105,6 +2107,18 @@ PlayableDirector:
   - key: {fileID: -7402864679785049693, guid: 8f9c250e5b732ce408afac231d661741, type: 2}
     value: {fileID: 2093417415}
   - key: {fileID: -8007250976870861921, guid: 8f9c250e5b732ce408afac231d661741, type: 2}
+    value: {fileID: 1874512648}
+  - key: {fileID: -5749619822342328799, guid: 8f9c250e5b732ce408afac231d661741, type: 2}
+    value: {fileID: 1576479055}
+  - key: {fileID: 6681805830732678944, guid: ab1b28d990bbb12429e2297ba2b91704, type: 2}
+    value: {fileID: 1719576824}
+  - key: {fileID: -5749619822342328799, guid: ab1b28d990bbb12429e2297ba2b91704, type: 2}
+    value: {fileID: 1576479055}
+  - key: {fileID: -1553921171081289146, guid: ab1b28d990bbb12429e2297ba2b91704, type: 2}
+    value: {fileID: 2093417417}
+  - key: {fileID: -7402864679785049693, guid: ab1b28d990bbb12429e2297ba2b91704, type: 2}
+    value: {fileID: 2093417415}
+  - key: {fileID: -8007250976870861921, guid: ab1b28d990bbb12429e2297ba2b91704, type: 2}
     value: {fileID: 1874512648}
   m_ExposedReferences:
     m_References: []
@@ -3729,6 +3743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576479054}
   - component: {fileID: 1576479053}
+  - component: {fileID: 1576479055}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3770,6 +3785,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 241283827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576479055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576479052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2272053149ae6f64c8b85b302113729a, type: 2}
+    - {fileID: 11400000, guid: 0e15adc4a8a25b24da7630663f219c35, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1576479053}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: UnlockPlayerAbility
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1576479053}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: UnlockPlayerAbility
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1584847458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6313,7 +6373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2049911864494627755, guid: 7fe5bedb1a73043469c3f16722281380, type: 3}
       propertyPath: attackDamage
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2283422278728380269, guid: 7fe5bedb1a73043469c3f16722281380, type: 3}
       propertyPath: m_Layer
@@ -6788,12 +6848,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
+      propertyPath: dashCD
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 1576479053}
     - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: stunTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
+      propertyPath: dashRange
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: m_Enabled

@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 public class BossStunState : State
 {
@@ -29,6 +30,10 @@ public class BossStunState : State
     {
         if (curTime > bossContext.StunTime)
         {
+            if (bossContext.CurrentStage >= 3 && bossContext.canDash())
+            {
+                SwitchState(new BossDashWindupState(bossContext));
+            }
             if (bossContext.CurrentStage >= 2 && bossContext.GrappleInRange())
             {
                 SwitchState(new BossGrappleState(bossContext));
@@ -37,7 +42,7 @@ public class BossStunState : State
             {
                 SwitchState(new BossAttackState(bossContext));
             } else
-            {   
+            {
                 SwitchState(new BossWalkState(bossContext));
             }
         } 

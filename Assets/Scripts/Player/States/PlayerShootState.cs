@@ -43,9 +43,9 @@ public class PlayerShootState : State
             return;
         }
         playerContext.ShootFinished = false; 
-        if (playerContext.IsMovementPressed && playerContext.IsRunPressed)
+        if (playerContext.IsRunPressed)
         {
-            SwitchState(new PlayerRunState(playerContext));
+            SwitchState(new PlayerDashState(playerContext));
         } else if (playerContext.IsMovementPressed)
         {   
             SwitchState(new PlayerWalkState(playerContext));

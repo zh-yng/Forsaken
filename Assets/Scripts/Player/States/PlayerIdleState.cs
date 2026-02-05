@@ -39,12 +39,9 @@ public class PlayerIdleState : State
         } else if (playerContext.Grounded && playerContext.IsJumpPressed)
         {
             SwitchState(new PlayerJumpState(playerContext));
-        } else if (playerContext.IsDashPressed && playerContext.CanDash)
+        } else if (playerContext.IsRunPressed)
         {
             SwitchState(new PlayerDashState(playerContext));
-        } else if (playerContext.IsMovementPressed && playerContext.IsRunPressed)
-        {
-            SwitchState(new PlayerRunState(playerContext));
         } else if (playerContext.IsMovementPressed)
         {   
             SwitchState(new PlayerWalkState(playerContext));

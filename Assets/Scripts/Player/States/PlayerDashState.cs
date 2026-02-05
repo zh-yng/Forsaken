@@ -11,9 +11,12 @@ public class PlayerDashState : State
     }
     public override void InitializeSubStates()
     {
-        if (playerContext.IsDashPressed)
+        if (playerContext.CanDash)
         {
-            SetSubState(new PlayerDashSetUpState(playerContext));
+            SetSubState(new PlayerDashAttackState(playerContext));
+        } else
+        {
+            SetSubState(new PlayerRunState(playerContext));
         }
     }
     public override void EnterState()
@@ -21,7 +24,6 @@ public class PlayerDashState : State
         playerContext.DashFinished = false;
         playerContext.IsDashing = true;
         playerContext.CanMove = false;
-        playerContext.CurrentDashMeter = 0;
         // playerContext.AppliedMovementX = 0f;
         // playerContext.AppliedMovementY = 0f;
     }
@@ -37,9 +39,12 @@ public class PlayerDashState : State
 
     public override void CheckSwitchStates()
     {
-        if (!playerContext.IsDashPressed && playerContext.DashFinished)
+        if (!playerContext.IsMovementPressed && playerContext.DashFinished)
         {
             SwitchState(new PlayerIdleState(playerContext));
+        } else if (!playerContext.IsRunPressed && playerContext.IsMovementPressed && playerContext.DashFinished)
+        {
+            SwitchState(new PlayerWalkState(playerContext));
         }
     }
 }

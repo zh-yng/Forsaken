@@ -45,7 +45,7 @@ public class PlayerJumpState : State
             SwitchState(new PlayerWalkState(playerContext));
         } else if (playerContext.Grounded && playerContext.IsRunPressed)
         {
-            SwitchState(new PlayerRunState(playerContext));
+            SwitchState(new PlayerDashState(playerContext));
         }
     }
 }

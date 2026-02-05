@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//deprecated
 public class PlayerDashSetUpState : State
 {
     private PlayerStateMachine playerContext;
@@ -9,7 +9,6 @@ public class PlayerDashSetUpState : State
     }
     public override void EnterState()
     {
-        playerContext.DashArrow.SetActive(true);
         playerContext.Manager.SetTimeScale(0.5f);
         playerContext.AppliedMovementX = 0f;
         playerContext.AppliedMovementY = 0f;

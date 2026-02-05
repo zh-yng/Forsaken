@@ -35,9 +35,9 @@ public class PlayerHurtState : State
         {
             SwitchState(new PlayerAttackState(playerContext));
         }
-        else if (playerContext.IsMovementPressed && playerContext.IsRunPressed)
+        else if (playerContext.IsRunPressed)
         {
-            SwitchState(new PlayerRunState(playerContext));
+            SwitchState(new PlayerDashState(playerContext));
         } else if (playerContext.IsMovementPressed)
         {   
             SwitchState(new PlayerWalkState(playerContext));

@@ -6,7 +6,6 @@ public class PlayerRunState : State
     public PlayerRunState(PlayerStateMachine currentContext) : base(currentContext)
     {
         playerContext = currentContext;
-        isBaseState = true;
     }
     public override void EnterState()
     {
@@ -41,11 +40,9 @@ public class PlayerRunState : State
         } else if (playerContext.Grounded && playerContext.IsJumpPressed)
         {
             SwitchState(new PlayerJumpState(playerContext));
-        }  else if (playerContext.IsDashPressed && playerContext.CanDash)
-        {
-            SwitchState(new PlayerDashState(playerContext));
         } else if (!playerContext.IsMovementPressed)
         {
+            playerContext.IsRunPressed = false;
             SwitchState(new PlayerIdleState(playerContext));
         } else if (playerContext.IsMovementPressed && !playerContext.IsRunPressed)
         {   

@@ -15,17 +15,21 @@ public class StageThree : State
         if (bossContext.GrappleInRange())
         {
             SetSubState(new BossGrappleState(bossContext));
-        } 
+        }
+        else if (bossContext.canDash())
+        {
+            SetSubState(new BossDashWindupState(bossContext));
+        }
         else if (bossContext.InRange())
         {
             SetSubState(new BossAttackState(bossContext));
-        } else if (bossContext.IsStunned)
-        {   
+        }
+        else if (bossContext.IsStunned)
+        {
             SetSubState(new BossStunState(bossContext));
-        } else
-        {   
+        }
+        else
             SetSubState(new BossWalkState(bossContext));
-        } 
     }
     public override void EnterState()
     {

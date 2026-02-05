@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     //insert some way to transition here
     public void BeginNextStage()
     {
-        
         currentStage += 1;
         cutsceneManager.PlayCutScene(currentStage);
         Debug.Log("entering next stage");
@@ -54,7 +53,12 @@ public class GameManager : MonoBehaviour
         bossStateMachine.Health = 100;
         bossStateMachine.Damage *= 2;
         bossStateMachine.MoveSpeed *= 1.5f;
-        playerStateMachine.UnlockAbility(currentStage);
+    }
+
+    public void UnlockPlayerAbility(int ability)
+    {
+        Debug.Log("unlocking");
+        playerStateMachine.UnlockAbility(ability);
     }
 
     public void CheckWinStatus()
@@ -67,12 +71,11 @@ public class GameManager : MonoBehaviour
         }
         else if (playerStateMachine.Health <= 0)
         {
-            gameOver = true;;
+            gameOver = true;
             playerStateMachine.OnDisable();
             cutsceneManager.PlayCutScene(0);
         } else {
             BeginNextStage();
-            
         }
     }
     public void SetTimeScale(float scale)
