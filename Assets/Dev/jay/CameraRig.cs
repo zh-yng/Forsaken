@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class CameraRigTrigger : MonoBehaviour
+public class CameraRig : MonoBehaviour
 {
     public enum SpaceMode
     {
