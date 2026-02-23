@@ -12,7 +12,7 @@ public class BossStunState : State
     public override void EnterState()
     {
         Debug.Log("currently stunned");
-        bossContext.Anim.Play("Idle");
+        bossContext.Anim.SetTrigger("stun");
         bossContext.AppliedMovementX = 0f;
         bossContext.AppliedMovementY = 0f;
         curTime = 0f;
@@ -25,6 +25,7 @@ public class BossStunState : State
     public override void ExitState()
     {
         bossContext.IsStunned = false;
+        bossContext.Anim.ResetTrigger("stun");
     }
 
     public override void CheckSwitchStates()

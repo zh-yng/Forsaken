@@ -14,8 +14,16 @@ public class Player_Ranged : Weapon
     public void Shoot()
     {
         if (projectilePrefab == null || firePoint == null) return;
+        
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane screen = new Plane(Vector3.forward, Vector3.zero);
 
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float distanceFromScreen;
+        Vector3 mousePos = Vector3.zero;
+        if (screen.Raycast(mouseRay, out distanceFromScreen))
+        {
+            mousePos = mouseRay.GetPoint(distanceFromScreen);
+        }
         mousePos.z = 0;
 
         Vector2 shootDir = (mousePos - firePoint.position).normalized;

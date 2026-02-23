@@ -35,6 +35,7 @@ public class PlayerDashAttackState : State
     public override void ExitState()
     {
         playerContext.DashFinished = false;
+        playerContext.IsDashing = false;
         playerContext.Anim.ResetTrigger("dash");
         playerContext.DashTrail.GetComponent<DashTrail>().IsDrawingTrail = false;
         playerContext.DashTrail.GetComponent<DashTrail>().Clear();

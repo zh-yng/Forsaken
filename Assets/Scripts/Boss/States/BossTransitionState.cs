@@ -2,6 +2,7 @@ using UnityEngine;
 public class BossTransitionState : State
 {
     private BossStateMachine bossContext;
+    private string triggerName = "";
     public BossTransitionState(BossStateMachine currentContext) : base(currentContext)
     {
         bossContext = currentContext;
@@ -12,13 +13,16 @@ public class BossTransitionState : State
         bossContext.IntroFinished = 0;
         if (bossContext.CurrentStage == 1)
         {
-            bossContext.Anim.Play("Phase One");
+            triggerName = "phaseOne";
+            bossContext.Anim.SetTrigger("phaseOne");
         } else if (bossContext.CurrentStage == 2)
         {
-            bossContext.Anim.Play("Phase Two");
+            triggerName = "phaseTwo";
+           bossContext.Anim.SetTrigger("phaseTwo");
         } else
         {
-            bossContext.Anim.Play("Phase Three");
+            triggerName = "phaseThree";
+            bossContext.Anim.SetTrigger("phaseThree");
         }
         bossContext.AppliedMovementX = 0f;
         bossContext.AppliedMovementY = 0f;
@@ -33,6 +37,7 @@ public class BossTransitionState : State
         bossContext.IsTransitioning = false;
         bossContext.AppliedMovementX = 0f;
         bossContext.AppliedMovementY = 0f;
+        bossContext.Anim.ResetTrigger(triggerName);
     }
 
     public override void CheckSwitchStates()
@@ -45,6 +50,7 @@ public class BossTransitionState : State
             }
             else if (bossContext.CurrentStage == 2)
             {
+                Debug.Log("entering stage 2");
                 SwitchState(new StageTwo(bossContext));
             } else if (bossContext.CurrentStage == 3)
             {

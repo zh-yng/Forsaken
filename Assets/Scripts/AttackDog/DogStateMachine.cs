@@ -11,6 +11,8 @@ public class DogStateMachine : StateMachine, IDamageable
     [SerializeField] private float stunInterval;
     [SerializeField] private int damage;
     [SerializeField] private float damageCooldown;
+    [SerializeField] private float jumpForceX;
+    [SerializeField] private float jumpForceY;
     
     private bool isFlipped = false;
     private bool isStunned = false;
@@ -20,7 +22,7 @@ public class DogStateMachine : StateMachine, IDamageable
     private int hurtFinished = 0;
     private int introFinished = 0;
     private int health;
-    
+    private ParticleSystem damageTakenParticles;
     public bool FightStarted {get {return manager.FightStarted;}}
     public bool IsStunned {get {return isStunned;} set {isStunned = value;}}
     public bool IsTransitioning {get {return manager.IsTransitioning;} set {manager.IsTransitioning = value;}}
@@ -32,6 +34,7 @@ public class DogStateMachine : StateMachine, IDamageable
     public int IntroFinished {get {return introFinished; } set {introFinished = value;}}
     public int Health {get {return health;} set {health = value;}}
     public int Damage {get {return damage;} set {damage = value;}}
+    public Vector2 JumpForce {get {return new Vector2(jumpForceX, jumpForceY);}}
     public float Cooldown {get {return damageCooldown;} set {damageCooldown = value;}}
     public float StunTime {get {return stunTime;}}
     public float StunInterval {get {return stunInterval;}}
@@ -43,6 +46,7 @@ public class DogStateMachine : StateMachine, IDamageable
         base.Init();
         sprite = transform.Find("Sprite");
         Health = 100;
+        damageTakenParticles = sprite.Find("hit received particles").GetComponent<ParticleSystem>();
     }
 
     protected override void EnterBeginningState()
@@ -84,7 +88,7 @@ public class DogStateMachine : StateMachine, IDamageable
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.transform == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             player.gameObject.GetComponent<PlayerStateMachine>().ApplyDamage(Damage);
         }
@@ -109,16 +113,13 @@ public class DogStateMachine : StateMachine, IDamageable
 
     public void ApplyDamage(int damage)
     {
-        if (IntroFinished == 1 && manager.FightStarted)
+        Health -= damage;
+        Debug.Log("Enemy Health: " + Health);
+        flashCharacter();
+        damageTakenParticles.Play();
+        if (Health <= 0)
         {
-            Health -= damage;
-            Debug.Log("Enemy Health: " + Health);
-            flashCharacter();
-            
-        }
-        if (Health % StunInterval == 0 && !isStunned)
-        {
-            isStunned = true;
+            gameObject.SetActive(false);
         }
     }
 

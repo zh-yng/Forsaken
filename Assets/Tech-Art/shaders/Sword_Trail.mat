@@ -46,11 +46,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _AccentColor: {r: 0.764151, g: 0, b: 0.6071867, a: 0}
+    - _AccentColor: {r: 1.4980392, g: 0.32941177, b: 1.4980392, a: 0}
     - _Color01: {r: 1, g: 0.4575472, b: 0.8887276, a: 1}
     - _Color02: {r: 0.5882353, g: 0.9652255, b: 1, a: 1}
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
-    - _Emissive: {r: 1.4980392, g: 0.61476153, b: 1.1471481, a: 0}
+    - _Emissive: {r: 1.4980392, g: 0.42352942, b: 1.4980392, a: 0}
     - _MainTexSpeed: {r: -0.1, g: 0, b: 0, a: 0}
     - _SlashColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

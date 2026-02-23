@@ -59,6 +59,9 @@ TagManager:
   - name: Environmental VFX
     uniqueID: 445459845
     locked: 0
+  - name: Characters
+    uniqueID: 3189926209
+    locked: 0
   - name: VFX
     uniqueID: 4200552967
     locked: 0

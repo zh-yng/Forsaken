@@ -9,9 +9,10 @@ public class BossDashWindupState : State
     public override void EnterState()
     {
         bossContext.AttackFinished = 0;
+        bossContext.IsDashing = true;
         bossContext.WindUpFinished = false;
         bossContext.flashCharacter();
-        bossContext.Anim.Play("Charge Wind Up");
+        bossContext.Anim.SetTrigger("charge");
         bossContext.AppliedMovementX = 0;
         bossContext.LastDashTime = Time.time;
         Debug.Log("Attempting a dash here!");
@@ -22,7 +23,9 @@ public class BossDashWindupState : State
     }
     public override void ExitState()
     {
+        bossContext.IsDashing = false;
         bossContext.WindUpFinished = true;
+        bossContext.Anim.ResetTrigger("charge");
     }
 
     public override void CheckSwitchStates()

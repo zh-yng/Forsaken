@@ -9,6 +9,7 @@ public class PlayerHurtState : State
     }
     public override void EnterState()
     {
+        Debug.Log("entering hurt");
         playerContext.CanMove = false;
         playerContext.Anim.SetTrigger("hurt");
         playerContext.AppliedMovementX = 0f;
@@ -16,22 +17,22 @@ public class PlayerHurtState : State
     }
     public override void UpdateState()
     {
-        CheckSwitchStates();
+        if (playerContext.HurtFinished)
+        {
+            CheckSwitchStates();
+        }
+        
     }
     public override void ExitState()
     {
         playerContext.Anim.ResetTrigger("hurt");
+        playerContext.HurtFinished = false;
         playerContext.IsHurt = false;
         playerContext.CanMove = true;
     }
 
     public override void CheckSwitchStates()
     {
-        if (!playerContext.HurtFinished)
-        {
-            return;
-        }
-        playerContext.HurtFinished = false;
         if (playerContext.IsHitPressed)
         {
             SwitchState(new PlayerAttackState(playerContext));

@@ -22,6 +22,7 @@ public class PlayerWalkState : State
     }
     public override void ExitState()
     {
+        playerContext.Anim.ResetTrigger("walk");
     }
 
     public override void CheckSwitchStates()
@@ -41,13 +42,12 @@ public class PlayerWalkState : State
         else if (playerContext.Grounded && playerContext.IsJumpPressed)
         {
             SwitchState(new PlayerJumpState(playerContext));
-        } 
-        else if (!playerContext.IsMovementPressed )
-        {
-            SwitchState(new PlayerIdleState(playerContext));
-        } else if (playerContext.IsMovementPressed && playerContext.IsRunPressed)
+        }  else if (playerContext.IsMovementPressed && playerContext.IsRunPressed)
         {   
             SwitchState(new PlayerDashState(playerContext));
+        } else if (!playerContext.IsMovementPressed )
+        {
+            SwitchState(new PlayerIdleState(playerContext));
         }
     }
 }

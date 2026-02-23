@@ -14,12 +14,12 @@ public class Player_Melee : Weapon
         {
             Attack(other.gameObject.GetComponent<IDamageable>());
         }
-        //to-do: why does this trigger later?
-        else if (other.gameObject.CompareTag("HUE Weapon") && weilder.GetComponent<PlayerStateMachine>().IsBlocking && weilder.GetComponent<PlayerStateMachine>().CanParry)
-        {
-            Debug.Log(other.gameObject.name);
-            weilder.GetComponent<PlayerStateMachine>().StartParry();
-        }
+        // //to-do: why does this trigger later?
+        // else if (other.gameObject.CompareTag("HUE Weapon") && weilder.GetComponent<PlayerStateMachine>().IsBlocking && weilder.GetComponent<PlayerStateMachine>().CanParry)
+        // {
+        //     Debug.Log(other.gameObject.name);
+        //     weilder.GetComponent<PlayerStateMachine>().StartParry();
+        // }
     }
 
 }
