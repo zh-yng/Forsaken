@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         SetTimeScale(1f);
 
         saveData = SaveManager.Load();
-        currentScene = saveData.currentSceneIndex;
+        currentScene = SceneManager.GetActiveScene().buildIndex;
         if (saveData.shootUnlocked) UnlockPlayerAbility(2);
         if (saveData.canDash) UnlockPlayerAbility(3);
 
