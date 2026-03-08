@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98b97d428ca44f1468506e98addd1ee8, type: 3}
-  m_Name: TrainPoster
+  m_Name: Investigate
   m_EditorClassIdentifier: 
   dialogue:
-  - '"Apparently, individuals with purple veins no longer have human rights."
-
-'
+  - Can we move on, ONE? I don't like it here
   responses:
   - responseText: Move On
-    dialogueObject: {fileID: 11400000, guid: 0752fc9e76c6ee44fabe0199a50c1258, type: 2}
+    dialogueObject: {fileID: 11400000, guid: 2f65000149524ac4e9dff3c5fdcd5429, type: 2}

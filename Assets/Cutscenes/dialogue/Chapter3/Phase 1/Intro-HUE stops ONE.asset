@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b97d428ca44f1468506e98addd1ee8, type: 3}
+  m_Name: Intro-HUE stops ONE
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 'HUE: Stop right there! That human is highly infectious. I am under orders to
+    take her to quarantine. Why do you keep running away?'
+  - "ONE: I don\u2019t believe a single word you say. You exterminate humans, not
+    heal them. Eva\u2026 Eva won\u2019t last long without a cure. If you leave us
+    be, I\u2019m sure we can find a cure\u2013"
+  - 'HUE: Even if you run to the ends of the earth, there might not be a cure.'
+  - 'ONE: Her disease is highly infectious, how many more humans will become infected
+    and die before you find the so-called cure?'
+  - "HUE: So\u2026 what will you do now?"
+  responses: []
