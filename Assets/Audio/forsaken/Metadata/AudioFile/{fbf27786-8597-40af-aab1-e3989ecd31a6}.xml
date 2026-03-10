@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fbf27786-8597-40af-aab1-e3989ecd31a6}">
+		<property name="assetPath">
+			<value>Music/for_saken chill WIP.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>20.06204081632653</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{34226ea8-06b1-4e60-8211-cd84a31ebd97}</destination>
+		</relationship>
+	</object>
+</objects>

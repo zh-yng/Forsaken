@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5ff2af32-1825-41f1-ad66-34b489a85375}">
+		<property name="assetPath">
+			<value>Music/forsaken boss 2.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>83.763038548752832</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{34226ea8-06b1-4e60-8211-cd84a31ebd97}</destination>
+		</relationship>
+	</object>
+</objects>
