@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Video;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -21,8 +22,7 @@ public class CutsceneManager : MonoBehaviour
     }
 
     public void PlayCutScene(int index)
-    {
-        
+    { 
         manager.FightStarted = false;
         cutscenes[index].GetComponent<PlayableDirector>().Play();
         currentCutscene = index;
@@ -53,4 +53,5 @@ public class CutsceneManager : MonoBehaviour
         }
         cutscenes[currentCutscene].GetComponent<PlayableDirector>().Stop();
     }
+
 }

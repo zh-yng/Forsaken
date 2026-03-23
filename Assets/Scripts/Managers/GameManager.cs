@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CutsceneManager cutsceneManager;
     [SerializeField] private GameObject aggroArea;
     [SerializeField] private AudioSource[] songs;
-
-
+    
     [Header("UI References")]
     [SerializeField] private GameObject lossScreen;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject decisionScreen;
     [SerializeField] private GameObject nextSceenScreen;
+    [SerializeField] private GameObject healthbar;
+
 
     [Header("Control Variables")]
     [SerializeField] private int numStages;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
         aggroArea.SetActive(false);
         decisionScreen.SetActive(true);
     }
+
     public void BeginBattle()
     {
         Debug.Log("beginning battle");
@@ -87,7 +89,18 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         playerStateMachine.OnDisable();
         cutsceneManager.PlayCutScene(0);
+    }
+
+    public void EndGame()
+    {
+        gameOver = true;
+        playerStateMachine.gameObject.SetActive(false);
+        if (bossStateMachine.gameObject.activeInHierarchy)
+        {
+           bossStateMachine.gameObject.SetActive(false); 
+        }
         
+        healthbar.SetActive(false);
     }
 
     //insert some way to transition here
@@ -116,12 +129,12 @@ public class GameManager : MonoBehaviour
     }
     public void CheckWinStatus()
     {
-        if (currentStage == numStages && bossStateMachine.Health <= 0)
+        if (bossStateMachine.gameObject.activeInHierarchy && currentStage == numStages && bossStateMachine.Health <= 0)
         {
             gameOver = true;
             playerStateMachine.OnDisable();
             fightStarted = false;
-            bossStateMachine.JumpToState(new BossStartState(bossStateMachine));
+            //bossStateMachine.JumpToState(new BossStartState(bossStateMachine));
             cutsceneManager.PlayCutScene(1);
         }
         else if (playerStateMachine.Health <= 0)
@@ -129,7 +142,7 @@ public class GameManager : MonoBehaviour
             gameOver = true;
             playerStateMachine.OnDisable();
             fightStarted = false;
-            bossStateMachine.JumpToState(new BossStartState(bossStateMachine));
+            //bossStateMachine.JumpToState(new BossStartState(bossStateMachine));
             cutsceneManager.PlayCutScene(0);
         } else {
             BeginNextStage();

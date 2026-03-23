@@ -19,10 +19,12 @@ public class BossSummonState : State
         bossContext.CurEnemies += 1;
         Debug.Log("summons attack");
         bossContext.Anim.SetTrigger("summon");
-        if (attackDog != null)
+        if (attackDog != null) {
             dog = Object.Instantiate(attackDog, t.position, t.rotation);
-        else 
+            dog.GetComponent<DogStateMachine>().AggroDistance = Mathf.Infinity;
+        } else {
             Debug.Log("Attack Dog not assigned!");
+        }
     }
 
     public override void UpdateState()

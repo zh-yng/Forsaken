@@ -1,0 +1,515 @@
+fileFormatVersion: 2
+guid: 3581fef98ea260c4783fb160b2beff5d
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 60e7c112c6934b64aa5a48fce668e72e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: SmallBoxGrown
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3376
+      width: 254
+      height: 384
+    spriteID: 6a5c0a63e371e0e45900cbe34a1789bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3376}
+    spritePosition: {x: 785, y: 17}
+  - name: MedBoxGrown
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 318
+      y: 1871
+      width: 381
+      height: 545
+    spriteID: 2a3f2fc2c178c2944a001dff67729bdd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 318, y: 1871}
+    spritePosition: {x: 383, y: 15}
+  - name: BigBoxGrown
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1065
+      y: 1092
+      width: 359
+      height: 750
+    spriteID: 73b970c90952bb6408ee1b4675715347
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1065, y: 1092}
+    spritePosition: {x: 0, y: 15}
+  - name: SmallBox
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 726
+      width: 255
+      height: 342
+    spriteID: 44fa9e2562715024685c745cd9c85eec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1092, y: 726}
+    spritePosition: {x: 785, y: 17}
+  - name: MedBox
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2894
+      width: 299
+      height: 474
+    spriteID: 0d8cdb5bcbd75a54d8f0e3ada8968b2c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2894}
+    spritePosition: {x: 418, y: 20}
+  - name: BigBox
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1432
+      y: 1092
+      width: 317
+      height: 684
+    spriteID: 40f555e2e04b7e940b26f06540bfe6a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1432, y: 1092}
+    spritePosition: {x: 38, y: 18}
+  - name: Stairs
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1092
+      width: 1053
+      height: 771
+    spriteID: 27725919a055bd549b723c7c048ab5fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1092}
+    spritePosition: {x: 27, y: 13}
+  - name: Pillar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1731
+      y: 4
+      width: 306
+      height: 1015
+    spriteID: 31868ebbd8203ac48ae3c3e47227be39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1731, y: 4}
+    spritePosition: {x: 749, y: 65}
+  - name: PartialBrokenPillar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1871
+      width: 306
+      height: 1015
+    spriteID: 678f28e8032fdcb459aa86cdd4afd6b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1871}
+    spritePosition: {x: 562, y: 65}
+  - name: BrokenPillar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1092
+      y: 4
+      width: 631
+      height: 714
+    spriteID: 65f9a2a00f1b07c43a367870a12299fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1092, y: 4}
+    spritePosition: {x: 10, y: 56}
+  - name: WallTile
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1080
+      height: 1080
+    spriteID: 302c75d02e04b2d44af4f8119ea94fe2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: SmallBoxGrown
+    spriteName: SmallBoxGrown
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6a5c0a63e371e0e45900cbe34a1789bc
+    layerID: 0
+    mosaicPosition: {x: 4, y: 3376}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: MedBoxGrown
+    spriteName: MedBoxGrown
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2a3f2fc2c178c2944a001dff67729bdd
+    layerID: 1505837376
+    mosaicPosition: {x: 318, y: 1871}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BigBoxGrown
+    spriteName: BigBoxGrown
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 73b970c90952bb6408ee1b4675715347
+    layerID: -1019756056
+    mosaicPosition: {x: 1065, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: SmallBox
+    spriteName: SmallBox
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 44fa9e2562715024685c745cd9c85eec
+    layerID: -5395862
+    mosaicPosition: {x: 1092, y: 726}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: MedBox
+    spriteName: MedBox
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0d8cdb5bcbd75a54d8f0e3ada8968b2c
+    layerID: -1091928891
+    mosaicPosition: {x: 4, y: 2894}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BigBox
+    spriteName: BigBox
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 40f555e2e04b7e940b26f06540bfe6a5
+    layerID: -313692003
+    mosaicPosition: {x: 1432, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Stairs
+    spriteName: Stairs
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 27725919a055bd549b723c7c048ab5fa
+    layerID: 2054139772
+    mosaicPosition: {x: 4, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pillar
+    spriteName: Pillar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 31868ebbd8203ac48ae3c3e47227be39
+    layerID: -2141619758
+    mosaicPosition: {x: 1731, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PartialBrokenPillar
+    spriteName: PartialBrokenPillar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 678f28e8032fdcb459aa86cdd4afd6b1
+    layerID: -593064074
+    mosaicPosition: {x: 4, y: 1871}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BrokenPillar
+    spriteName: BrokenPillar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 65f9a2a00f1b07c43a367870a12299fc
+    layerID: 1630395689
+    mosaicPosition: {x: 1092, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: WallTile
+    spriteName: WallTile
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 302c75d02e04b2d44af4f8119ea94fe2
+    layerID: -732864902
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Paper
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bdd59b4572e5248419ca5b6ffe6ba5cb
+    layerID: -1779142660
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

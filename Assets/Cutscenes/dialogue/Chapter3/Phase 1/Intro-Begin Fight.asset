@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b97d428ca44f1468506e98addd1ee8, type: 3}
+  m_Name: Intro-Begin Fight
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 'ONE: Even after you told me. Evan is my everything.'
+  - 'EVA: One...'
+  - 'HUE: You both are a threat to humanity... I will need to eliminate both of you'
+  responses: []

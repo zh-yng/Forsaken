@@ -3,7 +3,7 @@ using UnityEngine;
 public class DogStateMachine : StateMachine, IDamageable
 {
     [Header("Object References")]
-    [SerializeField] private GameManager manager;
+    //[SerializeField] private GameManager manager;
 
     [Header("Attack Controls")]
     [SerializeField] private float targetDistance;
@@ -25,9 +25,9 @@ public class DogStateMachine : StateMachine, IDamageable
     private int introFinished = 0;
     private int health;
     private ParticleSystem damageTakenParticles;
-    public bool FightStarted {get {return manager.FightStarted;}}
+    //public bool FightStarted {get {return manager.FightStarted;}}
     public bool IsStunned {get {return isStunned;} set {isStunned = value;}}
-    public bool IsTransitioning {get {return manager.IsTransitioning;} set {manager.IsTransitioning = value;}}
+    //public bool IsTransitioning {get {return manager.IsTransitioning;} set {manager.IsTransitioning = value;}}
     public bool WindUpFinished { get {return windUpFinished;} set { windUpFinished = value; } }
     public bool InAttack {get {return inAttack; } set {inAttack = value;}}
     public bool OnGround {get { return onGround; } set { onGround = value; } }
@@ -41,7 +41,8 @@ public class DogStateMachine : StateMachine, IDamageable
     public float StunTime {get {return stunTime;}}
     public float StunInterval {get {return stunInterval;}}
     public float TargetDistance {get {return targetDistance;}}
-    public int CurrentStage {get {return manager.CurrentStage;} set {manager.CurrentStage = value;}}
+    public float AggroDistance {get {return aggroDistance;} set {aggroDistance = value;}}
+    //public int CurrentStage {get {return manager.CurrentStage;} set {manager.CurrentStage = value;}}
 
     protected override void Init()
     {
@@ -49,29 +50,24 @@ public class DogStateMachine : StateMachine, IDamageable
         sprite = transform.Find("Sprite");
         Health = maxHealth;
         damageTakenParticles = sprite.Find("hit received particles").GetComponent<ParticleSystem>();
-        manager = GameObject.Find("Management").transform.Find("GameManager").gameObject.GetComponent<GameManager>();
+        //manager = GameObject.Find("Management").transform.Find("GameManager").gameObject.GetComponent<GameManager>();
     }
 
     protected override void EnterBeginningState()
     {
-        IsTransitioning = false;
         currentState = new DogStartState(this);
         currentState.EnterStates();
     }
 
     protected override void UpdateState()
     {
-        Debug.Log(currentState);
-        if (!IsTransitioning)
+        if (!inAttack)
         {
-            if (!inAttack)
-            {
-                rb.linearVelocity = appliedMovement;
-            }
-            else
-            {
-                rb.AddForce(appliedMovement, ForceMode2D.Impulse);
-            }
+            rb.linearVelocity = appliedMovement;
+        }
+        else
+        {
+            rb.AddForce(appliedMovement, ForceMode2D.Impulse);
         }
         currentState.UpdateStates();
     }
