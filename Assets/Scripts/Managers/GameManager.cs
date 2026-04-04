@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public bool FightStarted {get {return fightStarted;} set {fightStarted = value;}}
     public bool GameOver {get {return gameOver;} set {gameOver = value;}}
     public bool IsTransitioning {get {return isTransitioning;} set {isTransitioning = value;}}
+    public 
     #endregion
     
     #region Level Initialization
@@ -185,6 +186,7 @@ public class GameManager : MonoBehaviour
     }
     private void LoadData()
     {
+        Debug.Log("loading data");
         saveData = SaveManager.Load();
         SetAllDifficulties(saveData.difficulty);
         if (saveData.shootUnlocked) UnlockPlayerAbility(2);

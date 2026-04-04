@@ -19,7 +19,8 @@ public static class SaveManager {
         string savePath = Path.Combine(Application.persistentDataPath, $"{profileName}_save.json");
         if (!File.Exists(savePath)){
             Debug.Log("[SaveManager] No save file found at: " + savePath + " — loading defaults");
-            return new SaveData();
+            return CreateNewSave();
+            //return new SaveData();
         }
         string json = File.ReadAllText(savePath);
         Debug.Log("[SaveManager] File loaded from: " + savePath);
@@ -28,7 +29,9 @@ public static class SaveManager {
     }
     public static SaveData Load()
     {
-        if (loadedSave == "") return null;
+        if (loadedSave == "") {
+            loadedSave = "TEST";
+        }
         return Load(loadedSave);
     }
 
@@ -56,5 +59,14 @@ public static class SaveManager {
         }
 
         return saveProfiles;
+    }
+
+    public static SaveData CreateNewSave()
+    {
+        Debug.Log("creating a temporary save");
+        SaveData saveData = new SaveData();
+        saveData.profileName = "TEST";
+        saveData.difficulty = Difficulty.Normal;
+        return saveData;
     }
 }

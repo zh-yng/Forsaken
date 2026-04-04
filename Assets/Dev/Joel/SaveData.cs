@@ -3,7 +3,7 @@ using System;
 [Serializable]
 public class SaveData {
     public string profileName;
-    public Difficulty difficulty = Difficulty.Easy;
+    public Difficulty difficulty = Difficulty.Normal;
     public int currentSceneIndex = 1;
     public bool shootUnlocked = false;
     public bool canDash = false;
