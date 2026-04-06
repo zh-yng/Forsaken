@@ -223,7 +223,7 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
             return;
         }
         if (Time.time > canTakeDamage && !IsParrying)
-        {   Debug.Log("taking damage");
+        { 
             canTakeDamage = Time.time + Cooldown;
             Health -= damage; 
             IsHurt = true;
@@ -282,7 +282,6 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
     public void StartParry()
     {
         parryParticles.Play();
-        Debug.Log("starting parry");
         StartCoroutine(StartParryInternal());
         IsHurt = false;
         CanParry = false; 
@@ -312,7 +311,6 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
             grounded = false;
         } else if (LayerMask.LayerToName(other.gameObject.layer).Equals("Background"))
         {
-            Debug.Log($"Exit: {other.gameObject.name}, tag: {other.gameObject.tag}, layer: {LayerMask.LayerToName(other.gameObject.layer)}");
             hitWall = false;
         }
     }
@@ -337,7 +335,6 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
     }
     void OnRunEnd(InputAction.CallbackContext context)
     {
-        Debug.Log("cancelled run");
         isRunPressed = false;
         
     }

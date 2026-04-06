@@ -10,7 +10,6 @@ public class PlayerParryState : State
     }
     public override void EnterState()
     {
-        Debug.Log("Parrying");
         playerContext.CanParry = true;
         playerContext.Anim.SetTrigger("parry");
         //to-do: find a better way to trigger the stun state
@@ -23,7 +22,6 @@ public class PlayerParryState : State
     public override void ExitState()
     {   
         playerContext.Anim.ResetTrigger("parry");
-        Debug.Log("Parried");
     }
 
     public override void CheckSwitchStates() {

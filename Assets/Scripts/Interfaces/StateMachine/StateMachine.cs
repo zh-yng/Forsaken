@@ -58,6 +58,7 @@ public abstract class StateMachine : MonoBehaviour
 
     public void JumpToState(State state)
     {
+        currentState.ExitState();
         currentState = state;
         currentState.EnterStates();
     }

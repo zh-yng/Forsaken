@@ -11,13 +11,11 @@ public class BossSummonState : State
         bossContext = currentContext;
         attackDog = bossContext.AttackDog;
         t = bossContext.RB.gameObject.transform;
-        Debug.Log("Attemping Summon State");
     }
 
     public override void EnterState(){
         GameObject dog;
         bossContext.CurEnemies += 1;
-        Debug.Log("summons attack");
         bossContext.Anim.SetTrigger("summon");
         if (attackDog != null) {
             dog = Object.Instantiate(attackDog, t.position, t.rotation);

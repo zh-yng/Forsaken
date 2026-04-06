@@ -939,9 +939,9 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &132447221 stripped
+--- !u!114 &142519885 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9220186289274954402, guid: a7925d66210ba184f9ab3a44fa3bbc8c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8259154642884667363, guid: a7925d66210ba184f9ab3a44fa3bbc8c, type: 3}
   m_PrefabInstance: {fileID: 2446096774501070469}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2242,7 +2242,7 @@ PrefabInstance:
     - target: {fileID: 8206160355613416833, guid: 193c249e372e47042bbd482a433b6183, type: 3}
       propertyPath: energyFill
       value: 
-      objectReference: {fileID: 132447221}
+      objectReference: {fileID: 142519885}
     - target: {fileID: 8413796908871759917, guid: 193c249e372e47042bbd482a433b6183, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -2925,6 +2925,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 654834842189542036, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 654834842189542036, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -94414329
+      objectReference: {fileID: 0}
     - target: {fileID: 1464074668874889943, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99977875
@@ -2961,6 +2969,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.016420487
       objectReference: {fileID: 0}
+    - target: {fileID: 3572943292596786966, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572943292596786966, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -94414329
+      objectReference: {fileID: 0}
     - target: {fileID: 4142753762154906301, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.018259207
@@ -2996,6 +3012,10 @@ PrefabInstance:
     - target: {fileID: 5248356043478672508, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.15625413
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682890711593219603, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6040438501865548833, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: attackDamage
@@ -3041,6 +3061,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.99999964
       objectReference: {fileID: 0}
+    - target: {fileID: 8241666615813397618, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241666615813397618, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -94414329
+      objectReference: {fileID: 0}
     - target: {fileID: 8248514665892689813, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -3076,6 +3104,10 @@ PrefabInstance:
     - target: {fileID: 8737583487541521480, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.99063134
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838020044064436509, guid: f658be0e1921d404fab436784adcace6, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9068600727389792046, guid: f658be0e1921d404fab436784adcace6, type: 3}
       propertyPath: m_Icon

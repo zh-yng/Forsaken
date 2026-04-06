@@ -50,7 +50,6 @@ public class BossTransitionState : State
             }
             else if (bossContext.CurrentStage == 2)
             {
-                Debug.Log("entering stage 2");
                 SwitchState(new StageTwo(bossContext));
             } else if (bossContext.CurrentStage == 3)
             {

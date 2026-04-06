@@ -14,7 +14,6 @@ public class BossGrappleState : State
 
     public override void EnterState()
     {
-        Debug.Log("entered grapple");
         bossContext.GrapplingFinished = 0;
         bossContext.Anim.SetTrigger("grapple");
 
@@ -38,7 +37,6 @@ public class BossGrappleState : State
 
     public override void ExitState()
     {
-        Debug.Log("exiting grapple");
         bossContext.Anim.ResetTrigger("grapple");
         lineRenderer.gameObject.SetActive(false);
     }

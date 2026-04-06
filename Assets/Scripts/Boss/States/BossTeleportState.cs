@@ -12,7 +12,6 @@ public class BossTeleportState : State
     }
     public override void EnterState()
     {
-        Debug.Log("Teleporting");
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(7, 8, true);
         //bossContext.Anim.SetTrigger("teleport");

@@ -30,7 +30,6 @@ public class BossDashWindupState : State
     {
         if (bossContext.IsStunned)
         {
-            Debug.Log("switching states");
             SwitchState(new BossStunState(bossContext));
         }
         else if (bossContext.WindUpFinished == true)

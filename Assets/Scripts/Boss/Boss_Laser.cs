@@ -10,7 +10,6 @@ public class Boss_Laser : Weapon
     {   
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("Laser hit!");
             Attack(other.gameObject.GetComponent<IDamageable>());
         }
 

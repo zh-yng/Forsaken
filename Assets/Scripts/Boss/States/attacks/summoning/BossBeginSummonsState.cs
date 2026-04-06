@@ -14,7 +14,6 @@ public class BossBeginSummonsState : State
         bossContext.AppliedMovementX = 0;
         bossContext.AttackFinished = 0;
         bossContext.Anim.SetTrigger("walk");
-        Debug.Log("Attemping Summon Walk");
     }
     public override void UpdateState()
     {

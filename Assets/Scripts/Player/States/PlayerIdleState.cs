@@ -10,7 +10,6 @@ public class PlayerIdleState : State
     }
     public override void EnterState()
     {
-        Debug.Log("entered idle");
         playerContext.CanMove = true;
         playerContext.Anim.SetTrigger("idle");
         playerContext.AppliedMovementX = 0f;

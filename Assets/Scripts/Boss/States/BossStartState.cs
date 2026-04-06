@@ -28,7 +28,6 @@ public class BossStartState : State
     {
         if (bossContext.FightStarted)
         {
-            Debug.Log("beginning fight");
             SwitchState(new BossTransitionState(bossContext));
         
         } 

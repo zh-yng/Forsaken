@@ -9,7 +9,6 @@ public class PlayerHurtState : State
     }
     public override void EnterState()
     {
-        Debug.Log("entering hurt");
         playerContext.CanMove = false;
         playerContext.Anim.SetTrigger("hurt");
         playerContext.AppliedMovementX = 0f;
