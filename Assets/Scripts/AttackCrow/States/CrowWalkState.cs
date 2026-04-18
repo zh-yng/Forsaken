@@ -26,8 +26,13 @@ public class CrowWalkState : State
     }
     public override void UpdateState()
     {
+        float time = swoopTime;
+        if (crowContext.IsParryStunned)
+        {
+            time *= 2f;
+        }
         if (t < 1) {
-            t = Mathf.Min(t + Time.deltaTime / swoopTime, 1);
+            t = Mathf.Min(t + Time.deltaTime / time, 1);
             crowContext.RB.gameObject.transform.position = Bezier(startPos, controlPoint, endPos, t);
         }
         CheckSwitchStates();

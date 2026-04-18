@@ -192,11 +192,7 @@ public class BossStateMachine : StateMachine, IDamageable
             BossDeath?.Invoke();
         }
     }
-    public void Stun()
-    {
-        Debug.Log("stunned");
-        currentState.SwitchState(new BossStunState(this));
-    }
+    
     #endregion
 
     #region Collision Events

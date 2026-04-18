@@ -23,8 +23,14 @@ public class Boss_Ranged : Weapon
         
         if (bulletObj.TryGetComponent(out BossBullet bullet))
         {
-            Debug.Log("initializing");
-            bullet.Initialize(shootDir, bulletSpeed);
+            if (weilder.GetComponent<StateMachine>().IsParryStunned)
+            {
+                bullet.Initialize(shootDir, bulletSpeed / victim.GetComponent<PlayerStateMachine>().ParrySlowDownAmount);
+            } else
+            {
+                bullet.Initialize(shootDir, bulletSpeed);
+            }
+            
         }
     }
 }

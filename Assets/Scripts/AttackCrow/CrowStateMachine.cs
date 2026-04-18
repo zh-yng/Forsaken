@@ -52,6 +52,7 @@ public class CrowStateMachine : StateMachine, IDamageable
 
     protected override void UpdateState()
     {
+        Debug.Log(currentState);
         rb.linearVelocity = appliedMovement;
         currentState.UpdateStates();
     }

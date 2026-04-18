@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9128149782868491168}
   - component: {fileID: 4782354404978404663}
   - component: {fileID: 6477105254620630542}
-  - component: {fileID: 4808670235571971055}
   m_Layer: 6
   m_Name: Eva
   m_TagString: Untagged
@@ -131,21 +130,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4808670235571971055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370626023838987139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9615add2dfcac541861ab297cecaede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4.7
-  followDistance: 2
-  timeInIdle: 2
 --- !u!1 &635696037554852455
 GameObject:
   m_ObjectHideFlags: 0

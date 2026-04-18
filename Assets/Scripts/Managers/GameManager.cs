@@ -108,9 +108,14 @@ public class GameManager : MonoBehaviour
     {
         if (bossStateMachine != null && bossStateMachine.gameObject.activeInHierarchy)
         {
-            bossStateMachine.Stun();
+            bossStateMachine.Stun(playerStateMachine.ParryCooldown, playerStateMachine.ParrySlowDownAmount);
         }
-        
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<StateMachine>().Stun(playerStateMachine.ParryCooldown, playerStateMachine.ParrySlowDownAmount);
+        }
     }
     public void UnlockPlayerAbility(int ability)
     {

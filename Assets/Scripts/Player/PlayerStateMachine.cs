@@ -36,6 +36,7 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
     [Header("Parry")]
     [SerializeField] private float parryTiming = 2.5f;
     [SerializeField] private float parryCooldown = 2.5f;
+    [SerializeField] private float parrySlowDownAmount = 2f;
 
     [Header("Stamina/Energy")]
     [SerializeField] private float maxEnergy = 100f;
@@ -134,6 +135,7 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
     
     private ParticleSystem damageTakenParticles;
     [SerializeField] private ParticleSystem parryParticles;
+    [SerializeField] private ShockwaveTrigger shockwave;
     #endregion
 
     #region Getters and Setters
@@ -159,6 +161,8 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
         }
     } // every change of the can parry variable makes a new id
 
+    public float ParryCooldown {get {return parryCooldown;}}
+    public float ParrySlowDownAmount {get {return parrySlowDownAmount;}}
     public bool IsParrying {get {return isParrying;} set {isParrying = value;}}
     public bool IsHurt{get {return isHurt;} set {isHurt = value;}}
     public bool HitWall{get {return hitWall;} set {hitWall = value;}}
@@ -531,6 +535,7 @@ public class PlayerStateMachine : StateMachine, IDamageable, ISetDifficulty
     public void StartParry()
     {
         parryParticles.Play();
+        shockwave.PlayShockwave();
         StartCoroutine(StartParryInternal());
         IsHurt = false;
         CanParry = false; 

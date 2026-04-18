@@ -52,7 +52,7 @@ public class BossGrappleState : State
     private IEnumerator AnimateGrapple()
     {
         float elapsed = 0f;
-        float duration = bossContext.GrappleDuration;
+        float duration = bossContext.GrappleDuration * (bossContext.IsParryStunned ? 0.5f : 1f);
         float stopDistance = 2f;
 
         // Jump up before throwing the chain
